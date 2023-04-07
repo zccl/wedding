@@ -3,7 +3,7 @@
     <img src="~@/assets/images/flower.png" class="flower" />
     <h2 class="h2">
       尊敬的
-      <div class="name">李毅大帝520</div>
+      <div class="name">{{ name }}</div>
     </h2>
     <p>
       我和小祝终于要结婚啦！在这个特殊的日子里，我们非常期待你的光临。<br />
@@ -18,15 +18,16 @@
 
 <script>
 export default {
-  name: 'Divider',
+  name: 'Funding',
   data() {
     return {
       name: '',
     };
   },
   created() {
-    // this.name = window.location.query.name;
-    console.log(decodeURI(window.location.search.slice(1)));
+    this.name = decodeURI(
+      window.location.search.slice(1) || 'ladies and gentlemen',
+    );
   },
 };
 </script>
